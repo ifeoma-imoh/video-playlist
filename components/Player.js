@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import styles from "../styles/Home.module.css";
 
 export default function Player({ videosData }) {
@@ -7,7 +7,6 @@ export default function Player({ videosData }) {
     const cld = window.cloudinary.Cloudinary.new({
       cloud_name: "ifeomaimoh",
     });
-    console.log(cld);
     if (videosData) {
       const player = cld.videoPlayer("example-player", {
         playlistWidget: {

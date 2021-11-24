@@ -9,8 +9,10 @@ cloudinary.v2.config({
 
 export default async function getData(req, res) {
   try {
-    const res = await cloudinary.v2.api.resources({ resource_type: "video" });
-    return res.json(res.resources);
+    const cloudRes = await cloudinary.v2.api.resources({
+      resource_type: "video",
+    });
+    return res.json(cloudRes.resources);
   } catch (error) {
     return res.json({ message: error.message });
   }

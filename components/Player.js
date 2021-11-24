@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styles from "../styles/Home.module.css";
+
 export default function Player({ videosData }) {
   const formattedData = videosData.map((x) => x.public_id);
   useEffect(() => {

@@ -4,7 +4,7 @@ import axios from "axios";
 import Player from "../components/Player";
 
 export default function Home() {
-  const [videosData, setVideosData] = useState();
+  const [videosData, setVideosData] = useState([]);
 
   useEffect(() => {
     getVideos();
@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {videosData ? <Player videosData={videosData} /> : ""}
+      {videosData.length > 0 ? <Player videosData={videosData} /> : ""}
     </div>
   );
 }
